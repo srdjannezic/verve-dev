@@ -1,0 +1,11 @@
+name: TemplatesController
+modelClass: Verve\Templates\Models\TemplatesModel
+form: $/verve/templates/models/templatesmodel/fields.yaml
+defaultRedirect: verve/templates/templatescontroller
+create:
+    redirect: 'verve/templates/templatescontroller/update/:id'
+    redirectClose: verve/templates/templatescontroller
+update:
+    redirect: verve/templates/templatescontroller
+    redirectClose: verve/templates/templatescontroller
+preview: {  }

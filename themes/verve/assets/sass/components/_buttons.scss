@@ -1,0 +1,90 @@
+//-------------------------
+//----------- BUTTONS
+//-------------------------
+
+.btn-book {
+    padding: 1.8rem 3.1rem;
+    font-size: 1.8rem;
+    letter-spacing: 1.8px;
+    color: #454d45;
+    background-color: $c-mainGreen;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all ease 0.3s;
+    &:hover {
+        background-color: #9EAF9E;
+    }
+    @include breakpoint(desktop--Large) {
+        font-size: 18px;
+        padding: 18px 31px;
+    }
+    @include breakpoint(desktop--small) {
+        font-size: 1.6rem;
+    }
+    @include breakpoint(tablet) {
+        padding: 2.8rem 4.1rem;
+        font-size: 2.6rem;
+    }
+    @include breakpoint(mobile) {
+        padding: 1.8rem 3.1rem;
+        font-size: 1.9rem;
+    }
+    @include breakpoint(mobile--l) {
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+    &--main {
+        display: none;
+        position: fixed;
+        padding: 0;
+        bottom: 0;
+        right: 0;
+        width: 21.7rem;
+        height: 8.5rem;
+        font-size: 1.8rem;
+        z-index: 6;
+        max-width: 217px;
+        max-height: 85px;
+        &.hide-btn {
+            display: none!important;
+        }
+        @include breakpoint(desktop--Large) {
+            font-size: 18px;
+        }
+        @include breakpoint(desktop--small) {
+            width: 18rem;
+            height: 7.5rem;
+            font-size: 16px;
+        }
+        @include breakpoint(mobile) {
+            bottom: 0px;
+            right: 0px;
+            width: 86px;
+            height: 68px;
+            font-size: 14px;
+            letter-spacing: 1.4px;
+        }
+        span {
+            @include absolute(center);
+            width: 80%;
+        }
+    }
+}
+
+//-- ARROW UP
+
+.back-to-top {
+    display: none;
+    position: absolute;
+    bottom: 1000px;
+    i {
+        font-size: 40px;
+        color: #D7BE96;
+    }
+    @include breakpoint(tablet) {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+    }
+}
+

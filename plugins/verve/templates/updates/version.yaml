@@ -1,0 +1,68 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table verve_templates_'
+    - builder_table_create_verve_templates_.php
+1.0.3:
+    - 'Created table verve_templates_clients_'
+    - builder_table_create_verve_templates_clients_.php
+1.0.4:
+    - 'Updated table verve_templates_'
+    - builder_table_update_verve_templates_.php
+1.0.5:
+    - 'Updated table verve_templates_clients_'
+    - builder_table_update_verve_templates_clients_.php
+1.0.6:
+    - 'Updated table verve_templates_'
+    - builder_table_update_verve_templates__2.php
+1.0.7:
+    - 'Updated table verve_templates_'
+    - builder_table_update_verve_templates__3.php
+1.0.8:
+    - 'Updated table verve_templates_clients_'
+    - builder_table_update_verve_templates_clients__2.php
+1.0.9:
+    - 'Updated table verve_templates_'
+    - builder_table_update_verve_templates__4.php
+1.0.10:
+    - 'Updated table verve_templates_'
+    - builder_table_update_verve_templates__5.php
+1.0.11:
+    - 'Updated table verve_templates_'
+    - builder_table_update_verve_templates__6.php
+1.0.12:
+    - 'Updated table verve_templates_'
+    - builder_table_update_verve_templates__7.php
+1.0.13:
+    - 'Updated table verve_templates_clients_'
+    - builder_table_update_verve_templates_clients__3.php
+1.0.14:
+    - 'Updated table verve_templates_'
+    - builder_table_update_verve_templates__8.php
+1.0.15:
+    - 'Updated table verve_templates_'
+    - builder_table_update_verve_templates__9.php
+1.0.16:
+    - 'Updated table verve_templates_'
+    - builder_table_update_verve_templates__10.php
+1.0.17:
+    - 'Updated table verve_templates_'
+    - builder_table_update_verve_templates__11.php
+1.0.18:
+    - 'Updated table verve_templates_'
+    - builder_table_update_verve_templates__12.php
+1.0.19:
+    - 'Updated table verve_templates_'
+    - builder_table_update_verve_templates__13.php
+1.0.20:
+    - 'Updated table verve_templates_'
+    - builder_table_update_verve_templates__14.php
+1.0.21:
+    - 'Created table verve_templates_animations'
+    - builder_table_create_verve_templates_animations.php
+1.0.22:
+    - 'Updated table verve_templates_'
+    - builder_table_update_verve_templates__15.php
+1.0.23:
+    - 'Updated table verve_templates_'
+    - builder_table_update_verve_templates__16.php

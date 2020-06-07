@@ -1,0 +1,44 @@
+//-------------------------
+//----------------VARIABLES
+//-------------------------
+
+//-----COLORS
+$c-black           : #000;
+$c-white           : #fff;
+$c-mainGreen       : #b7c8b7;
+$c-mainBrown       : #b46b4d;  
+$c-potpouri        : #f0d8d2; 
+$c-darkGreen       : #555341;
+
+
+
+//-----PATHS
+$localFontBase: "/themes/verve/assets/fonts/";
+$imgBaseUrl   : "/images/";
+
+
+//------DIMENSIONS
+$baseFontSize: 10;
+$fullWidth: 100%;
+$fullHeight: 100%;
+
+//------FONT
+$fontDefault: Arial, Helvetica, Tahoma, sans-serif;
+$baseFont: 'Poppins', sans-serif;
+
+$styledFont-med: 'ButlerMedium', serif;
+$handWriteFont: 'LeFestin', serif;
+
+
+
+
+//------MEDIA QUERIES
+$desktop--Large     : 1365px;
+$desktop-fit        : 1600px;
+$desktop            : 1400px;
+$desktop--small     : 1280px;
+$tablet--landscape  : 1023px;
+$tablet             : 990px;
+$mobile             : 767px; 
+$mobile--l          : 640px; 
+$mobile--s          : 480px; 

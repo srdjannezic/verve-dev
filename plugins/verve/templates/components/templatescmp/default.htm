@@ -1,0 +1,251 @@
+
+<section class="section hero-sec">
+	{% for slide in template.heroblock %}
+		{% set slide_image = '/storage/app/media' ~ slide.hero_image %}
+		{% set slide_mob_image = '/storage/app/media' ~ slide.hero_mob_img %}
+		<div class="hero-slide">
+			{% if slide.hero_image %}
+			<div class="img-wrapper desktop-device">
+				<img src="{{ url(slide_image) }}" />
+			</div>
+			{% endif %}
+			{% if slide.hero_mob_img %}
+			<div class="img-wrapper mobile-device">
+				<img src="{{ url(slide_mob_image) }}" />
+			</div>
+			{% endif %}
+			<div class="hero-slide__content">
+				<div class="hero__logo" >
+					<div class="logo-wrapper">
+						<img src="../themes/verve/assets/images/verve-logo-white.svg" alt="" class="text-logo-verve">
+						<!-- <img src="../themes/verve/assets/images/our-gift-to-you.svg" alt=""> -->
+						<ul class="gift-text">
+						<!-- 	<li>our</li> -->
+							<li id="gift-effect"></li>
+						<!-- 	<li>to you</li> -->
+						</ul>
+					</div>
+				</div>
+				<h2 class="hero__title">{{ slide.title|raw }}</h2>
+				<h4 class="hero__subtitle">{{ slide.subtitle|raw }}</h4>
+				<div class="btn-wrapper">
+					<div class="btn-mob-animation">
+						<a href="#your-gift" class="btn-book"><span>Open My Gift</span></a>	
+					</div>
+				</div>
+				<div class="scroll-full"><a href="#your-gift"><span>Scroll to continue</span><i class="icon-scroll-full"></i></a></div>
+			</div>
+		</div>
+	{% endfor %}
+</section>
+
+<section class="section about-sec" data-aos="fade-up">
+	<div class="about-sec__half">
+		<h3 class="sec-title">
+		    {% if template.title_for_includes %}
+		        {{ template.title_for_includes|raw }}
+		    {% else %}
+		    Your Verve photography gift <br>includes the following:
+		    {% endif %}
+		 </h3>
+		{% set gift_counter = 1 %}
+		<div class="about__list">
+			{% for slide in template.includes %}
+				<div class="includes {{ slide.class }}">
+					<div class="includes__top"><div class="num"><span>{{ gift_counter }}</span></div><h4>{{ slide.title|raw }}</h4></div>
+					<div class="includes__bottom">{{ slide.content|raw }}</div>
+					{% set gift_counter = gift_counter + 1 %}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="about-sec__half">
+		<div class="img-wrapper">
+			{% set includes_img = '/storage/app/media' ~ template.image_for_includes %}
+
+			<img src="{{ url(includes_img) }}" alt="verve includes image" data-aos="fade-up"  data-aos-offset="100" data-aos-delay="10">
+
+		</div>
+	</div>
+</section>
+
+<section class="section how-sec" data-aos="fade-up">
+	<div class="slider-wrapper">
+		{% for slide in template.how_it_works %}
+			{% set slide_image = '/storage/app/media' ~ slide.media %}
+			{% set video_thumb = '/storage/app/media' ~ slide.video_thumb %}
+			{% set video_class = '' %}
+
+			{% if slide.image %}
+				{% set video_class = 'with-img' %}
+			{% elseif slide.video_frame %}
+				{% set video_class = 'with-video' %}
+			{% else %}
+				{% set video_class = 'with-video' %}
+			{% endif %}
+
+			<div class="slide-in-section">
+				<div class="slide-inner-wrapper">
+					<div class="slide__title">{{ slide.title|raw }}</div>
+					<div class="slide__content">{{ slide.content|raw }}</div>
+				</div>
+				<div class="slide__media {{ video_class }}">
+					<div class="video-wrapper" data-fancybox2="images" data-src="{% if slide.video_frame %}{{ slide.video_frame }}{% else %}{{ url(slide_image) }}{% endif %}"
+						{% if slide.image %}
+							{% set img = '/storage/app/media' ~ slide.image %}	
+							style="background-image: url('{{ url(img) }}');"
+						{% endif %}
+					>
+						{% if slide.video_frame %}
+							<img src="{{ url(video_thumb) }}" />
+							{{ slide.video_frame|raw }}
+						{% else %}
+						<video width="400" style="object-fit: cover;" {% if slide.video_thumb %} poster="{{ url(video_thumb) }}" {% endif %}>
+							<source src="{{ url(slide_image) }}" type="video/mp4">
+							<source src="{{ url(slide_image) }}" type="video/ogg">
+							Your browser does not support HTML5 video.
+						</video>
+						{% endif %}
+					</div>
+					{% if not slide.image %}
+					<span class="btn-play"><i class="icon-play"></i></span>
+					<span class="video__note">{{ slide.video_description }}</span>
+					{% endif %}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	<span class="btn-prev"><i class="icon-arrow-left"></i><i class="icon-mobile-arrow-left"></i></span>
+	<span class="btn-next"><i class="icon-arrow-right"></i><i class="icon-mobile-arrow-right"></i></span>
+</section>
+
+<section class="section promo-sec" data-aos="fade-up">
+	{% for slide in template.slider %}
+		{% set slide_image = '/storage/app/media' ~ slide.image %}
+		<div class="slide-in-section">
+			<div class="slide__image" style="background-image: url('{{ url(slide_image) }}');"></div>
+			<div class="slide-inner-wrapper">
+				<div class="slide__title" data-aos="fade-up" data-aos-offset="200" data-aos-delay="10">{{ slide.title|raw }}</div>
+				<div class="slide__content" data-aos="fade-up" data-aos-offset="200" data-aos-delay="10">{{ slide.content|raw }}</div>
+
+			</div>
+		</div>
+	{% endfor %}
+</section>
+
+<section class="section gallery-sec" data-aos="fade-up">
+
+	<h2 class="sec-title">{% if template.title_for_work|raw %}
+	{{  template.title_for_work }}
+	{% else %}
+	Some amazing moments we've captured
+	{% endif %}</h2>
+
+	<div class="gallery-list">
+		{% for slide in template.work %}
+			{% set slide_image = '/storage/app/media' ~ slide.media %}
+			<div class="media-wrapper" data-fancybox="images" data-src="{{ url(slide_image) }}"><img src="{{ url(slide_image) }}" /></div>
+		{% endfor %}
+	</div>
+</section>
+
+<section class="section promo-sec mob-reverse" >
+	{% for slide in template.visual_legacies %}
+		{% set slide_image = '/storage/app/media' ~ slide.image %}
+		<div class="slide-in-section">
+
+
+			<div class="slide__image" data-aos="fade-up" style="background-image: url('{{ url(slide_image) }}');"></div>
+			<div class="slide-inner-wrapper">
+				<div class="slide__title" data-aos="fade-up" data-aos-offset="200" data-aos-delay="10">{{ slide.text_legacy|raw }}</div>
+
+			</div>
+		</div>
+	{% endfor %}
+</section>
+
+<section class="section testimonials-sec" data-aos="fade-up">
+	<div class="slider-wrapper">
+		{% for slide in template.about %}
+			{% set slide_image = '/storage/app/media' ~ slide.media %}
+			{% set video_thumb = '/storage/app/media' ~ slide.video_thumb %}
+			{% set video_class = '' %}
+
+			{% if slide.image %}
+				{% set video_class = 'with-img' %}
+			{% elseif slide.video_frame %}
+				{% set video_class = 'with-video' %}
+			{% else %}
+				{% set video_class = 'with-video' %}
+			{% endif %}
+
+			<div class="slide-in-section">
+				<div class="slide-inner-wrapper">
+					<div class="slide__title">{{ slide.title|raw }}</div>
+					<div class="slide__content">{{ slide.content|raw }}</div>
+				</div>
+				<div class="slide__media {{ video_class }}">
+					<div class="video-wrapper" data-fancybox2="images" data-src="{% if slide.video_frame %}{{ slide.video_frame }}{% else %}{{ url(slide_image) }}{% endif %}">
+						{% if slide.image %}
+							{% set img = '/storage/app/media' ~ slide.image %}	
+							<img src="{{ url(img) }}" />
+						{% elseif slide.video_frame %}
+							<img src="{{ url(video_thumb) }}" />
+							{{ slide.video_frame|raw }}
+						{% else %}
+						<video width="400" style="object-fit: cover;" {% if slide.video_thumb %} poster="{{ url(video_thumb) }}" {% endif %}>
+							<source src="{{ url(slide_image) }}" type="video/mp4">
+							<source src="{{ url(slide_image) }}" type="video/ogg">
+							Your browser does not support HTML5 video.
+						</video>
+						{% endif %}
+					</div>
+					{% if not slide.image %}
+					<span class="btn-play"><i class="icon-play"></i></span>
+					<span class="video__note">{{ slide.video_description }}</span>
+					{% endif %}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	<span class="btn-prev"><i class="icon-arrow-left"></i><i class="icon-mobile-arrow-left"></i></span>
+	<span class="btn-next"><i class="icon-arrow-right"></i><i class="icon-mobile-arrow-right"></i></span>
+</section>
+
+<section class="section mosaic-sec" data-aos="fade-up">
+
+	<h2 class="sec-title">Our Artwork</h2>
+
+	<div class="mosaic-list">
+		{% for slide in template.mosaic_gallery %}
+			{% set slide_image = '/storage/app/media' ~ slide.mosaic_image %}
+			<div class="media-wrapper"><img src="{{ url(slide_image) }}" /></div>
+		{% endfor %}
+	</div>
+</section>
+
+<section class="section last-sec">
+	<div class="teaser-sec">
+		<div class="teaser__logo" data-aos="fade-up" data-aos-offset="100" data-aos-delay="10">
+
+			<!-- <img src="../themes/verve/assets/images/verve-logo.svg" alt="" class="text-logo-verve">
+			<img src="../themes/verve/assets/images/verve-logo-experience.svg" alt=""> -->
+
+		</div>
+		<div class="inner-wrapper" data-aos="fade-up" data-aos-offset="100" data-aos-delay="10">
+			{% for slide in template.cta_box %}
+				<h2 class="teaser__title">{{ slide.title|raw }}</h2>
+				{{ slide.subtitle|raw }}
+				<a href="https://www.verveportraits.com.au/book-in/" target="blank" class="btn-book"><span>BOOK NOW</span></a>	
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="register-sec">
+		{% for slide in template.register_message %}
+			<h2 data-aos="fade-up" data-aos-offset="00" data-aos-delay="10">{{ slide.title|raw }}</h2>
+			<div data-aos="fade-up" data-aos-offset="00">{{ slide.content|raw }}</div>
+		{% endfor %}		
+	</div>
+</section>
+

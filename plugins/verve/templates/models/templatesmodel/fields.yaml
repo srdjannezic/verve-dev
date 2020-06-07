@@ -1,0 +1,327 @@
+fields:
+    active:
+        label: 'Active?'
+        span: auto
+        type: switch
+    name:
+        label: Name
+        span: left
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        type: text
+        comment: 'url slug'
+    client:
+        label: Client
+        nameFrom: name
+        descriptionFrom: description
+        span: full
+        type: relation
+    animation:
+        label: Animation
+        nameFrom: name
+        descriptionFrom: description
+        select: name
+        span: auto
+        type: relation
+    heroblock:
+        label: 'Hero block'
+        prompt: 'Add new item'
+        span: full
+        cssClass: verve-template
+        type: repeater
+        form:
+            fields:
+                title:
+                    label: Title
+                    size: ''
+                    span: auto
+                    type: richeditor
+                subtitle:
+                    label: Subtitle
+                    size: ''
+                    span: full
+                    type: richeditor
+                cta_url:
+                    label: 'CTA url'
+                    span: auto
+                    type: text
+                type:
+                    label: Type
+                    options:
+                        center: center
+                        left: left
+                        right: right
+                    showSearch: true
+                    span: auto
+                    type: dropdown
+                hero_image:
+                    label: 'Hero Image'
+                    mode: file
+                    span: auto
+                    type: mediafinder
+                hero_mob_img:
+                    label: 'Hero Mobile Image'
+                    mode: file
+                    span: auto
+                    type: mediafinder
+    title_for_includes:
+        label: 'TItle For Includes'
+        span: full
+        type: richeditor
+    includes:
+        label: Includes
+        prompt: 'Add new item'
+        span: full
+        cssClass: verve-template
+        type: repeater
+        form:
+            fields:
+                title:
+                    label: Title
+                    size: ''
+                    span: full
+                    type: richeditor
+                content:
+                    label: Content
+                    size: ''
+                    span: full
+                    type: richeditor
+                class:
+                    label: 'CSS class'
+                    span: auto
+                    type: text
+                    comment: 'for developers only'
+    image_for_includes:
+        label: 'Image for Photo Includes'
+        mode: file
+        span: auto
+        type: mediafinder
+    slider:
+        label: 'Promo Slider'
+        prompt: 'Add new item'
+        span: full
+        cssClass: verve-template
+        type: repeater
+        form:
+            fields:
+                image:
+                    label: Image
+                    mode: file
+                    span: auto
+                    type: mediafinder
+                title:
+                    label: Title
+                    size: ''
+                    span: full
+                    type: richeditor
+                content:
+                    label: Content
+                    size: ''
+                    span: full
+                    type: richeditor
+                type:
+                    label: Type
+                    options:
+                        center: center
+                        left: left
+                        right: right
+                    showSearch: true
+                    span: auto
+                    type: dropdown
+    how_it_works:
+        label: 'How it works'
+        prompt: 'Add new item'
+        span: full
+        cssClass: verve-template
+        type: repeater
+        form:
+            fields:
+                media:
+                    label: 'Media (Image|Video)'
+                    mode: file
+                    span: auto
+                    type: mediafinder
+                video_thumb:
+                    label: 'Video Thumbnail'
+                    mode: file
+                    span: auto
+                    type: mediafinder
+                video_frame:
+                    label: 'Video frame'
+                    size: ''
+                    span: full
+                    type: textarea
+                    comment: 'paste here yt or vimeo iframe'
+                title:
+                    label: Title
+                    size: ''
+                    span: full
+                    type: richeditor
+                content:
+                    label: Content
+                    size: ''
+                    span: full
+                    type: richeditor
+                video_description:
+                    label: 'Short Video Description'
+                    span: auto
+                    type: text
+    title_for_work:
+        label: 'TItle for Work'
+        span: full
+        type: richeditor
+    work:
+        label: 'Our Work'
+        prompt: 'Add new item'
+        span: full
+        cssClass: verve-template
+        type: repeater
+        form:
+            fields:
+                media:
+                    label: Image
+                    mode: file
+                    span: auto
+                    type: mediafinder
+                type:
+                    label: Type
+                    options:
+                        center: center
+                        left: left
+                        right: right
+                    showSearch: true
+                    span: auto
+                    type: dropdown
+    visual_legacies:
+        label: 'Visual Legacies'
+        prompt: 'Add new item'
+        span: auto
+        type: repeater
+        form:
+            fields:
+                image:
+                    label: Image
+                    mode: file
+                    prompt: 'Add new item'
+                    span: auto
+                    type: mediafinder
+                text_legacy:
+                    label: 'Text for Legacy'
+                    size: ''
+                    span: full
+                    type: richeditor
+    about:
+        label: 'About us'
+        prompt: 'Add new item'
+        span: full
+        cssClass: verve-template
+        type: repeater
+        form:
+            fields:
+                media:
+                    label: 'Media (Image|Video)'
+                    mode: file
+                    span: auto
+                    type: mediafinder
+                video_thumb:
+                    label: 'Video Thumbnail'
+                    mode: file
+                    span: auto
+                    type: mediafinder
+                video_frame:
+                    label: 'Video Frame'
+                    size: ''
+                    span: full
+                    type: textarea
+                title:
+                    label: Title
+                    size: ''
+                    span: full
+                    type: richeditor
+                content:
+                    label: Content
+                    size: ''
+                    span: full
+                    type: richeditor
+                type:
+                    label: Type
+                    options:
+                        center: center
+                        left: left
+                        right: right
+                    showSearch: true
+                    span: auto
+                    type: dropdown
+    mosaic_gallery:
+        label: 'Mosaic Gallery'
+        prompt: 'Add new item'
+        span: full
+        type: repeater
+        form:
+            fields:
+                mosaic_image:
+                    label: Image
+                    mode: file
+                    prompt: 'Add new item'
+                    span: full
+                    type: mediafinder
+    cta_box:
+        label: 'CTA Box'
+        prompt: 'Add new item'
+        span: full
+        cssClass: verve-template
+        type: repeater
+        form:
+            fields:
+                title:
+                    label: Title
+                    size: ''
+                    span: full
+                    type: richeditor
+                subtitle:
+                    label: Subtitle
+                    size: ''
+                    span: full
+                    type: richeditor
+                cta_url:
+                    label: 'CTA Url'
+                    span: full
+                    type: text
+    register_message:
+        label: 'Register box'
+        prompt: 'Add new item'
+        span: full
+        type: repeater
+        form:
+            fields:
+                title:
+                    label: Title
+                    size: ''
+                    span: full
+                    type: richeditor
+                content:
+                    label: Content
+                    size: ''
+                    span: full
+                    type: richeditor
+tabs:
+    fields:
+        seo_title:
+            label: 'Meta Title'
+            span: auto
+            type: text
+            tab: SEO
+        seo_description:
+            label: 'Meta Description'
+            size: ''
+            span: full
+            type: textarea
+            tab: SEO
+        seo_image:
+            label: 'Meta Image'
+            mode: file
+            span: auto
+            type: mediafinder
+            tab: SEO

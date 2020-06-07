@@ -1,0 +1,24 @@
+plugin:
+    name: 'verve.templates::lang.plugin.name'
+    description: 'verve.templates::lang.plugin.description'
+    author: Verve
+    icon: oc-icon-copy
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Templates
+        url: /verve/templates/templatescontroller/
+        icon: icon-copy
+        sideMenu:
+            side-menu-item2:
+                label: Templates
+                url: /verve/templates/templatescontroller/
+                icon: icon-sitemap
+            side-menu-item:
+                label: Clients
+                url: /verve/templates/clientscontroller/
+                icon: icon-user
+            side-menu-item3:
+                label: 'Headline Animations'
+                url: /verve/templates/animationcontroller
+                icon: icon-skyatlas

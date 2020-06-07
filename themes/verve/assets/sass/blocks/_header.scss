@@ -1,0 +1,51 @@
+//-------------------------
+//----------- HEADER
+//-------------------------
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 3.6rem 4.3rem;
+	z-index: 5;
+	@include breakpoint(tablet) {
+		padding: 3rem 2.5rem;
+	}
+	@include breakpoint(tablet) {
+		display: none;
+	}
+}
+
+.header__logo {
+	opacity: 0;
+	width: 12rem;
+	transition: all ease-in-out 0.8s;
+	i {
+		font-size: 2rem;
+		color: $c-mainBrown;
+	}
+	&.load-gift-effect {
+		opacity: 1;
+
+		
+		
+	}
+	&.white {
+		i {
+			color: $c-white;
+		}
+	}
+}
+
+// .load-gift-effect svg path {
+//     fill: $c-white!important;
+//     stroke:$c-white!important;
+// }
+@include breakpoint(mobile) {
+	svg path {
+	    fill: $c-white!important;
+	    stroke:$c-white!important;
+	}
+}
+

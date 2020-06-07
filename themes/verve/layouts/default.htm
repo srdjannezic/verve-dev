@@ -1,0 +1,235 @@
+description = "Default layout"
+
+==
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Verve - our gift to you - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+
+        <meta name="title" content="{{ this.page.meta_title }}">
+
+        <meta name="author" content="Verve - our gift to you">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="generator" content="Verve">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ 'assets/images/apple-touch-icon.png'|theme }}">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/images/favicon-32x32.png'|theme }}"">
+
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/images/favicon-16x16.png'|theme }}">
+
+        <link rel="manifest" href="{{ 'assets/images//site.webmanifest'|theme }}">
+
+        <meta name="msapplication-TileColor" content="#da532c">
+
+        <meta name="theme-color" content="#ffffff">
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
+
+        <link href="{{ 'assets/css/style.css?=v1.33'|theme }}" rel="stylesheet">
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" rel="stylesheet">
+
+        {% styles %}
+
+    </head>
+
+    <body>
+        {% if this.page.components['Template'].template.animation.json %}
+            {% set animation_json = this.page.components['Template'].template.animation.json %}
+        {% else %}
+            {% set animation_json = '' %}
+        {% endif %}
+
+        <div class="preloader" data-json="{{ animation_json|escape }}">
+
+            <img src="/themes/verve/assets/images/verve-preloader-v1.gif" alt="preloader">
+
+        </div>
+        <div class="site-wrapper">
+
+            <!-- Header -->
+
+            <header id="layout-header" class="header">
+
+                {% partial 'site/header' %}
+
+            </header>
+
+
+
+            <!-- Content -->
+
+            <main id="layout-content">
+
+                <div id="fullpage">
+
+                    {% page %}
+
+                </div>
+
+            </maiin>
+
+
+
+            <!-- Footer -->
+
+            <footer id="layout-footer">
+
+                {% partial 'site/footer' %}
+
+            </footer>
+
+
+            <div class="back-to-top">
+
+                <i class="icon-arrow-up"></i>
+
+            </div>
+
+            <a href="https://www.verveportraits.com.au/book-in/" target="_blank" class="btn-book btn-book--main"><span>BOOK NOW</span></a>
+
+        </div>
+
+        <!-- Scripts -->
+
+
+ <!--        <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script> -->
+
+       <!--  <script src="{{ 'assets/javascript/slick.min.js'|theme }}"></script> -->
+
+      <!--   <script src="{{ 'assets/javascript/aos.js'|theme }}"></script> -->
+
+        <script src="{{ 'assets/javascript/all.min.js?v=1.521'|theme }}"></script>
+
+      <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"></script> -->
+
+        <script type="text/javascript" src="{{ 'assets/javascript/fullpage.min.js?=v1.1'|theme }}"></script>
+
+  <!--       <script src="{{ 'assets/javascript/lottie.min.js'|theme }}"></script> -->
+
+        <script src="{{ 'assets/javascript/main.min.js?v=1.52711'|theme }}"></script>
+
+        {% scripts %}
+
+        <script>
+
+            //-- FULLPAGE JS 
+            $(document).ready(function() {
+
+                function initFullPage() {
+                   
+
+                     $('#fullpage').fullpage({
+
+                        //options here
+
+                        licenseKey: '7423C0C8-1C17409C-9B425C37-391CFE70',
+
+                        navigation: true,
+
+                        anchors: ['firstPage', 'your-gift', 'how-it-works', 'about-verve', 'our-work', 'verve-legacies', 'testimonials', 'interior', 'book-now'],
+
+                        navigationPosition: 'right',
+
+                        navigationTooltips: ['01','02', '03', '04', '05', '06', '07', '08', '09'],
+
+                        scrollHorizontallyKey: 'bW9ycGhuZXR3b3Jrcy5jb21fallPYzJOeWIyeHNTRzl5YVhwdmJuUmhiR3g1VTYw',
+
+                        responsiveWidth: 1024,
+
+                        afterLoad: function(item){
+
+                            var activeSection = fullpage_api.getActiveSection();
+
+                            var headerLogo = $('.header__logo');
+
+                            var mainBtnBook = $('.btn-book--main');
+
+                            //headerLogo.fadeIn();
+
+                            if(activeSection.anchor !== "firstPage") {
+
+
+                                mainBtnBook.fadeIn();
+
+                            }
+
+                            else {
+
+                                // headerLogo.fadeOut();
+
+                                mainBtnBook.fadeOut();
+
+                            }
+
+                            if ( (activeSection.anchor == 'testimonials') || (activeSection.anchor == 'book-now') || (activeSection.anchor == 'firstPage') ){
+
+                                headerLogo.addClass('white');
+
+                            }
+
+                            else {
+
+                                headerLogo.removeClass('white');
+
+                            }
+
+                            if (activeSection.anchor == 'book-now') {
+
+                                $('.btn-book--main').fadeOut();
+
+                            }
+
+                            else {
+
+                                $('btn-book--main').fadeIn();
+
+                            }
+
+                            if((activeSection.anchor == 'about-verve') || (activeSection.anchor == 'verve-legacies') || (activeSection.anchor == 'interior') || (activeSection.anchor == 'book-now')) {
+
+                                $('#fp-nav').addClass('navBlack');
+
+                            }
+
+                            else {
+
+                                $('#fp-nav').removeClass('navBlack');
+
+                            }
+
+                        },
+
+                        onLeave: function() {
+
+                            $('.hero-sec').addClass('scroll-loaded');
+
+                        }
+
+                    }); 
+                }
+
+                if($(window).width() > 1024){
+
+                    initFullPage()
+                }
+
+                else {
+
+                    return;
+
+                }
+            });
+        </script>
+    </body>
+</html>
+

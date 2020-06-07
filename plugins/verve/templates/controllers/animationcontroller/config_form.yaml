@@ -1,0 +1,11 @@
+name: AnimationController
+modelClass: Verve\Templates\Models\AnimationsModel
+form: $/verve/templates/models/animationsmodel/fields.yaml
+defaultRedirect: verve/templates/animationcontroller
+create:
+    redirect: 'verve/templates/animationcontroller/update/:id'
+    redirectClose: verve/templates/animationcontroller
+update:
+    redirect: verve/templates/animationcontroller
+    redirectClose: verve/templates/animationcontroller
+preview: {  }

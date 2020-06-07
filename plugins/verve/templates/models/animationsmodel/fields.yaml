@@ -1,0 +1,11 @@
+fields:
+    name:
+        label: 'Animation Name'
+        span: full
+        type: text
+    json:
+        label: 'Animation JSON'
+        size: ''
+        span: full
+        type: textarea
+        comment: 'Paste animation JSON here'

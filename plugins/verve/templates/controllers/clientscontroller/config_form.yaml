@@ -1,0 +1,11 @@
+name: ClientsController
+modelClass: Verve\Templates\Models\ClientsModel
+form: $/verve/templates/models/clientsmodel/fields.yaml
+defaultRedirect: verve/templates/clientscontroller
+create:
+    redirect: 'verve/templates/clientscontroller/update/:id'
+    redirectClose: verve/templates/clientscontroller
+update:
+    redirect: verve/templates/clientscontroller
+    redirectClose: verve/templates/clientscontroller
+preview: {  }
